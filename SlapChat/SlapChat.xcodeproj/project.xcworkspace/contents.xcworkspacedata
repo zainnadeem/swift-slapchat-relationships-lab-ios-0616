@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SlapChatRelationships.xcodeproj">
+      location = "self:SlapChat.xcodeproj">
    </FileRef>
 </Workspace>
