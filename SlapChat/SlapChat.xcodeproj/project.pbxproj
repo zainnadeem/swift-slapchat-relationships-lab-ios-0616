@@ -13,9 +13,12 @@
 		1B85930E1D3D2D660051D343 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B85930D1D3D2D660051D343 /* Assets.xcassets */; };
 		1B8593111D3D2D660051D343 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B85930F1D3D2D660051D343 /* LaunchScreen.storyboard */; };
 		1B8593191D3D2DC70051D343 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8593181D3D2DC70051D343 /* DataStore.swift */; };
-		1B85931C1D3D2E420051D343 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B85931A1D3D2E420051D343 /* Message+CoreDataProperties.swift */; };
-		1B85931D1D3D2E420051D343 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B85931B1D3D2E420051D343 /* Message.swift */; };
 		1B85931F1D3D2EAD0051D343 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B85931E1D3D2EAD0051D343 /* TableViewController.swift */; };
+		1B8593251D3D30AD0051D343 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8593211D3D30AD0051D343 /* Message.swift */; };
+		1B8593271D3D30AD0051D343 /* Recipient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8593231D3D30AD0051D343 /* Recipient.swift */; };
+		1B8593291D3D39680051D343 /* RecipientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8593281D3D39680051D343 /* RecipientTableViewController.swift */; };
+		1B8593301D3D49810051D343 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B85932E1D3D49810051D343 /* Message+CoreDataProperties.swift */; };
+		1B8593311D3D49810051D343 /* Recipient+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B85932F1D3D49810051D343 /* Recipient+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +30,12 @@
 		1B8593101D3D2D660051D343 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B8593121D3D2D660051D343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B8593181D3D2DC70051D343 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		1B85931A1D3D2E420051D343 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1B85931B1D3D2E420051D343 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1B85931E1D3D2EAD0051D343 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		1B8593211D3D30AD0051D343 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = ../Message.swift; sourceTree = "<group>"; };
+		1B8593231D3D30AD0051D343 /* Recipient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipient.swift; path = ../Recipient.swift; sourceTree = "<group>"; };
+		1B8593281D3D39680051D343 /* RecipientTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipientTableViewController.swift; sourceTree = "<group>"; };
+		1B85932E1D3D49810051D343 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Message+CoreDataProperties.swift"; path = "../Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1B85932F1D3D49810051D343 /* Recipient+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Recipient+CoreDataProperties.swift"; path = "../Recipient+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +70,17 @@
 			children = (
 				1B8593031D3D2D660051D343 /* AppDelegate.swift */,
 				1B8593181D3D2DC70051D343 /* DataStore.swift */,
-				1B85931A1D3D2E420051D343 /* Message+CoreDataProperties.swift */,
-				1B85931B1D3D2E420051D343 /* Message.swift */,
+				1B8593211D3D30AD0051D343 /* Message.swift */,
+				1B8593231D3D30AD0051D343 /* Recipient.swift */,
+				1B85932E1D3D49810051D343 /* Message+CoreDataProperties.swift */,
+				1B85932F1D3D49810051D343 /* Recipient+CoreDataProperties.swift */,
 				1B85931E1D3D2EAD0051D343 /* TableViewController.swift */,
+				1B8593281D3D39680051D343 /* RecipientTableViewController.swift */,
+				1B85930A1D3D2D660051D343 /* SlapChat.xcdatamodeld */,
 				1B8593071D3D2D660051D343 /* Main.storyboard */,
 				1B85930D1D3D2D660051D343 /* Assets.xcassets */,
 				1B85930F1D3D2D660051D343 /* LaunchScreen.storyboard */,
 				1B8593121D3D2D660051D343 /* Info.plist */,
-				1B85930A1D3D2D660051D343 /* SlapChat.xcdatamodeld */,
 			);
 			path = SlapChat;
 			sourceTree = "<group>";
@@ -147,11 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B8593291D3D39680051D343 /* RecipientTableViewController.swift in Sources */,
 				1B85930C1D3D2D660051D343 /* SlapChat.xcdatamodeld in Sources */,
 				1B85931F1D3D2EAD0051D343 /* TableViewController.swift in Sources */,
 				1B8593191D3D2DC70051D343 /* DataStore.swift in Sources */,
-				1B85931D1D3D2E420051D343 /* Message.swift in Sources */,
-				1B85931C1D3D2E420051D343 /* Message+CoreDataProperties.swift in Sources */,
+				1B8593271D3D30AD0051D343 /* Recipient.swift in Sources */,
+				1B8593251D3D30AD0051D343 /* Message.swift in Sources */,
+				1B8593311D3D49810051D343 /* Recipient+CoreDataProperties.swift in Sources */,
+				1B8593301D3D49810051D343 /* Message+CoreDataProperties.swift in Sources */,
 				1B8593041D3D2D660051D343 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
