@@ -57,6 +57,38 @@ class DataStore {
         ////         perform a fetch request to fill an array property on your datastore
     }
     
+    func fetchDataWithName(entityName:String, sortKey:String?)-> [AnyObject]{
+         var localArray: [AnyObject] = []
+        var error:NSError? = nil
+        
+        let fetchRequest = NSFetchRequest(entityName: entityName)
+        let entityDescription = NSEntityDescription.entityForName(entityName,
+                                                                  inManagedObjectContext: self.managedObjectContext)
+        fetchRequest.entity = entityDescription
+        
+        //let createdAtSorter = NSSortDescriptor(key: "createdAt", ascending:true)
+        
+       // fetchRequest.sortDescriptors = [createdAtSorter]
+        
+        do{
+            localArray = try managedObjectContext.executeFetchRequest(fetchRequest)
+        }catch let nserror1 as NSError{
+            error = nserror1
+            messages = []
+        }
+        
+        if localArray.count == 0 {
+            generateTestData()
+        }
+        
+        return localArray
+    }
+    
+    
+    
+    
+    
+    
     func generateTestData() {
         
         let messageOne: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as! Message
@@ -73,6 +105,27 @@ class DataStore {
         
         messageThree.content = "Message 3"
         messageThree.createdAt = NSDate()
+
+        let firstRecipient: Recipient =  NSEntityDescription.insertNewObjectForEntityForName("Recipient", inManagedObjectContext: managedObjectContext) as! Recipient
+        
+       firstRecipient.name = "Zain"
+       firstRecipient.email = "@.comoooo zn"
+       firstRecipient.phoneNumber = "123456679"
+        firstRecipient.twitterHandle = "@inzainInTheMembrain"
+        
+        firstRecipient.messages?.insert(messageOne)
+        firstRecipient.messages?.insert(messageTwo)
+        
+        let secondRecipient: Recipient =  NSEntityDescription.insertNewObjectForEntityForName("Recipient",inManagedObjectContext: managedObjectContext) as! Recipient
+        
+        secondRecipient.name = "Kobe"
+        secondRecipient.email = "@.comoooo Kobe"
+        secondRecipient.phoneNumber = "987624242424"
+        secondRecipient.twitterHandle = "@blackMamba"
+        
+        firstRecipient.messages?.insert(messageOne)
+        firstRecipient.messages?.insert(messageTwo)
+        secondRecipient.messages?.insert(messageThree)
         
         saveContext()
         fetchData()

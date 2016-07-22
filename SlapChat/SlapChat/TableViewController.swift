@@ -11,13 +11,13 @@ import UIKit
 class TableViewController: UITableViewController {
 
     
-    var managedMessageObjects: [Message] = []
+    var managedMessageObjects: Set<Message> = []
     let store: DataStore = DataStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        store.fetchData()
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,8 +32,6 @@ class TableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(true)
-        
-        store.fetchData()
         tableView.reloadData()
         
     }
@@ -51,14 +49,14 @@ class TableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return store.messages.count
+        return managedMessageObjects.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
-        
-        let eachMessage = store.messages[indexPath.row]
+        let messages = Array(managedMessageObjects)
+        let eachMessage = messages[indexPath.row]
         
         cell.textLabel?.text = eachMessage.content
         
